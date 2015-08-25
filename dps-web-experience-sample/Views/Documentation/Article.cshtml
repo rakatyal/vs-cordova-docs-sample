@@ -1,0 +1,29 @@
+﻿@model ACOM.DocumentationSample.Models.DocumentationArticleMetadataModel
+
+@* Add HTML meta tags from document metadata *@
+@section cp_head {
+  @foreach (var tag in Model.Tags)
+  {
+  <meta name="@tag.Key" content="@tag.Value" />
+  }
+}
+
+<h1>
+  @Model.ArticleTitle
+</h1>
+  @if (Model.Tags != null && Model.Tags.Any(t => t.Key.Equals("ms.date")))
+  {
+    var date = Model.Tags.Where(t => t.Key.Equals("ms.date")).Select(t => t.Value).First();
+    DateTime datePosted;
+    if (DateTime.TryParse(date, out datePosted))
+    {
+      if (!datePosted.Equals(DateTime.MinValue))
+      {
+      <p>
+        Updated: @datePosted.ToShortDateString()
+      </p>
+      }
+    }
+  }
+@Html.Raw(Model.Content)
+
