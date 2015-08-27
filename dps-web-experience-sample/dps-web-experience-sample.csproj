@@ -147,6 +147,7 @@
     <Compile Include="Models\ArticlesConfiguration.cs" />
     <Compile Include="Models\DocumentationArticlesListModel.cs" />
     <Compile Include="Models\DocumentationArticleMetadataModel.cs" />
+    <Compile Include="Models\GithubAuthor.cs" />
     <Compile Include="Models\PublishVersionInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -200,6 +201,7 @@
     <Content Include="Views\Documentation\Article.cshtml" />
     <Content Include="Views\Documentation\Index.cshtml" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Views\Documentation\Contributors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
