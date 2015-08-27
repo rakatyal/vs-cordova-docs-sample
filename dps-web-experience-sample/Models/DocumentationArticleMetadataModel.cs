@@ -19,6 +19,8 @@ namespace ACOM.DocumentationSample.Models
 
     public IHtmlString Content { get; set; }
 
+    public IEnumerable<GithubAuthor> Contributors { get; set; }
+
   }
 
 }

@@ -14,6 +14,8 @@ namespace ACOM.DocumentationSample.Models
     public string MetaDescription { get; set; }
     public DateTime LastModified { get; set; }
     public Dictionary<string, string> Tags { get; set; }
+    public string[] Authors { get; set; }
+    public GithubAuthor[] GitHubContributors { get; set; }
 
   }
 }

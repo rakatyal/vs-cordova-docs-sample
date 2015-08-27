@@ -3,6 +3,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.WindowsAzure.Storage.RetryPolicies;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -85,6 +86,7 @@ namespace ACOM.DocumentationSample.Controllers
         PageTitle = articleMetadata.PageTitle,
         ArticleTitle = articleMetadata.ArticleTitle,
         MetaDescription = articleMetadata.MetaDescription,
+        Contributors = this.GetContributorsAndAuthors(articleMetadata)
       };
 
 
@@ -127,6 +129,9 @@ namespace ACOM.DocumentationSample.Controllers
       var docCenterString = string.Empty;
       var tagsString = string.Empty;
       var createdDate = string.Empty;
+      var githubContributorsString = string.Empty;
+      string articleAuthorString = string.Empty;
+
 
       
 
@@ -137,6 +142,8 @@ namespace ACOM.DocumentationSample.Controllers
       blockBlob.Metadata.TryGetValue("articleDocumentationCenter", out docCenterString);
       blockBlob.Metadata.TryGetValue("tags", out tagsString);
       blockBlob.Metadata.TryGetValue("createdDate", out createdDate);
+      blockBlob.Metadata.TryGetValue("articleAuthor", out articleAuthorString);
+      blockBlob.Metadata.TryGetValue("gitHubContributors", out githubContributorsString);
 
       if (string.IsNullOrEmpty(pageTitle))
       {
@@ -152,7 +159,17 @@ namespace ACOM.DocumentationSample.Controllers
         ArticleTitle = WebUtility.HtmlDecode(articleTitle),
         MetaDescription = WebUtility.HtmlDecode(metaDescription),
         Tags = this.ParseTags(tagsString),
+        Authors = this.ParseAuthors(articleAuthorString),
+        GitHubContributors = this.ParseGitHubContributors(WebUtility.HtmlDecode(githubContributorsString)).ToArray(),
       };
+    }
+
+    internal IEnumerable<GithubAuthor> GetContributorsAndAuthors(Article article)
+    {
+        var authors = article.Authors.SelectMany(a => article.GitHubContributors.Where(c => c.Login.Equals(a, StringComparison.InvariantCultureIgnoreCase))).ToList();
+        var otherContributors = article.GitHubContributors.Except(authors).Reverse().ToList();
+
+        return authors.Union(otherContributors);
     }
 
     internal Dictionary<string, string> ParseTags(string tagsString)
@@ -170,6 +187,27 @@ namespace ACOM.DocumentationSample.Controllers
     internal string GetSlugFromBlobName(string blobName)
     {
       return blobName.Split(new[] { "/" }, StringSplitOptions.RemoveEmptyEntries).Last().Replace(".html", string.Empty);
+    }
+
+    internal string[] ParseAuthors(string articleAuthorString)
+    {
+        if (string.IsNullOrWhiteSpace(articleAuthorString))
+        {
+            return new string[0];
+        }
+
+        return articleAuthorString.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(a => a.Trim()).ToArray();
+    }
+
+    internal IEnumerable<GithubAuthor> ParseGitHubContributors(string githubContributorsString)
+    {
+        if (!string.IsNullOrEmpty(githubContributorsString))
+        {
+            var obj = JToken.Parse(githubContributorsString);
+            return obj.ToObject<List<GithubAuthor>>();
+        }
+
+        return Enumerable.Empty<GithubAuthor>();
     }
   }
 }
