@@ -135,3 +135,15 @@ Deserialize the GithubContributors list.
 
 #### Remarks
 Returns a collection with the parsed __GithubAuthors__.
+
+## Documentation Article metadata
+|__Property__|__Description__|__Example__|
+|:-------|:----|:--------------------:|
+|x-ms-meta-pageTitle|Page title| ```Page title```|
+|x-ms-meta-articleTitle|Article title| ```Article title```|
+|x-ms-meta-metaDescription|Article meta description| ```This is an article```|
+|x-ms-meta-articleAuthor|CSV list of authors|```author1, author2```|
+|x-ms-meta-githubContributors|Contributors JSON array|```[{"Id":"123456", "Login":"jdoe", "Name":"John Doe"},{"Id":"654321", "Login":"user1", "Name":"Another User"}]```
+| | |
+
+
