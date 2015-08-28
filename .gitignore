@@ -5,3 +5,4 @@ packages/
 *.suo
 *.Cache
 *.user
+/dps-web-experience-sample/*.user
