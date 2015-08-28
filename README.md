@@ -54,7 +54,7 @@ Loads the blob text content.
 ##### Parameters
 - _blob_
 	- Type: Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob
-	- Documentation article blob..
+	- Documentation article blob.
 
 #### Remarks
 This method returns an HTML-encoded string with the blob content.
@@ -68,7 +68,7 @@ Parse the documentation article metadata from the given blob.
 	- Documentation article blob.
 
 #### Remarks
-This method extract the metadata attributes of the given blob and returns a new documentation __Article__ object with this parsed data.
+This method extracts the metadata attributes of the given blob and returns a new documentation __Article__ object with this parsed data.
 
 #### GetContributorsAndAuthors
 Get a list containing the authors of the article and the contributors.
@@ -137,6 +137,8 @@ Deserialize the GithubContributors list.
 Returns a collection with the parsed __GithubAuthors__.
 
 ## Documentation Article metadata
+All documentation articles contain the following metadata properties to enable some website automation and SEO stuff.
+ 
 |__Property__|__Description__|__Example__|
 |:-------|:----|:--------------------:|
 |x-ms-meta-pageTitle|Page title| ```Page title```|
@@ -144,6 +146,7 @@ Returns a collection with the parsed __GithubAuthors__.
 |x-ms-meta-metaDescription|Article meta description| ```This is an article```|
 |x-ms-meta-articleAuthor|CSV list of authors|```author1, author2```|
 |x-ms-meta-githubContributors|Contributors JSON array|```[{"Id":"123456", "Login":"jdoe", "Name":"John Doe"},{"Id":"654321", "Login":"user1", "Name":"Another User"}]```
-| | |
+|x-ms-meta-createdDate|Article Creation Date |```06-15-2009 01:45:30 PM```|
+
 
 
