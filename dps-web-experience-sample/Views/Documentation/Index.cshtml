@@ -1,4 +1,5 @@
 ﻿@model ACOM.DocumentationSample.Models.DocumentationArticlesListModel
+@using ACOM.DocumentationSample.Helpers
 
 <h1>
   @Model.PageTitle - @Model.Count Articles
@@ -7,6 +8,6 @@
 <ul>
   @foreach (var article in Model.Articles)
   {
-    <li><a href="/en-us/docs/@article.Slug/">@article.ArticleTitle</a></li>
+    <li><a href="@Html.LocalizeUrl("/docs/")@article.Slug/">@article.ArticleTitle</a></li>
   }
 </ul>
