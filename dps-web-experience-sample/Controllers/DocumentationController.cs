@@ -42,6 +42,11 @@ namespace ACOM.DocumentationSample.Controllers
             _partnerName = WebConfigurationManager.AppSettings["partner"];
         }
 
+        /// <summary>
+        /// Lists the documentation articles.
+        /// </summary>
+        /// <param name="culture">Culture from where the articles list will be loaded.</param>
+        /// <returns></returns>
         [Route("{culture=en-us}")]
         public ActionResult Index(string culture)
         {
@@ -64,6 +69,12 @@ namespace ACOM.DocumentationSample.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Loads a documentation article.
+        /// </summary>
+        /// <param name="culture">Culture to localize the requested documentation article.</param>
+        /// <param name="id">The id of the requested documentation article.</param>
+        /// <returns></returns>
         [Route("{culture=en-us}/docs/{id}")]
         public ActionResult Article(string culture, string id)
         {
@@ -94,8 +105,12 @@ namespace ACOM.DocumentationSample.Controllers
 
         #region Private
         /// <summary>
-        /// Every culture can have a separate version
+        /// Loads the version info from the settings file in the storage container.
+        /// Every culture can have a separate version.
         /// </summary>
+        /// <param name="blobContainer">The blob storage container.</param>
+        /// <param name="culture">Culture identifier</param>
+        /// <returns></returns>
         internal PublishVersionInfo GetPublishedVersion(CloudBlobContainer blobContainer, string culture)
         {
             PublishVersionInfo version = null;
@@ -111,6 +126,11 @@ namespace ACOM.DocumentationSample.Controllers
         }
         #endregion
 
+        /// <summary>
+        /// Loads the blob text content.
+        /// </summary>
+        /// <param name="blob">Documentation article blob.</param>
+        /// <returns>The blob content as an HTML-encoded string.</returns>
         private IHtmlString GetContent(CloudBlockBlob blob)
         {
             var contents = blob.DownloadTextAsync().Result;
@@ -118,6 +138,11 @@ namespace ACOM.DocumentationSample.Controllers
             return new HtmlString(contents);
         }
 
+        /// <summary>
+        /// Parse the article metadata from the given.
+        /// </summary>
+        /// <param name="blockBlob">Article blob.</param>
+        /// <returns>Documentation article.</returns>
         private Article GetArticleMetada(CloudBlockBlob blockBlob)
         {
             var lastModifiedProp = blockBlob.Properties.LastModified;
@@ -160,6 +185,11 @@ namespace ACOM.DocumentationSample.Controllers
             };
         }
 
+        /// <summary>
+        /// Get a list containing the authors of the article and the contributors.
+        /// </summary>
+        /// <param name="article">Documentation article.</param>
+        /// <returns>List of GithubAuthor.</returns>
         internal IEnumerable<GithubAuthor> GetContributorsAndAuthors(Article article)
         {
             var authors = article.Authors.SelectMany(a => article.GitHubContributors.Where(c => c.Login.Equals(a, StringComparison.InvariantCultureIgnoreCase))).ToList();
@@ -168,6 +198,11 @@ namespace ACOM.DocumentationSample.Controllers
             return authors.Union(otherContributors);
         }
 
+        /// <summary>
+        /// Parse the article tags.
+        /// </summary>
+        /// <param name="tagsString">JSON array containing the article tags.</param>
+        /// <returns></returns>
         internal Dictionary<string, string> ParseTags(string tagsString)
         {
             var tagsDictionary = new Dictionary<string, string>();
@@ -180,11 +215,21 @@ namespace ACOM.DocumentationSample.Controllers
             return tagsDictionary;
         }
 
+        /// <summary>
+        /// Resolve the slug from a blob name.
+        /// </summary>
+        /// <param name="blobName">Blob name.</param>
+        /// <returns>Slugified blob name.</returns>
         internal string GetSlugFromBlobName(string blobName)
         {
             return blobName.Split(new[] { "/" }, StringSplitOptions.RemoveEmptyEntries).Last().Replace(".html", string.Empty);
         }
 
+        /// <summary>
+        /// Parse the authors names from a comma separated string.
+        /// </summary>
+        /// <param name="articleAuthorString">Comma separated array of author names.</param>
+        /// <returns>Array of strings containing the parsed author names.</returns>
         internal string[] ParseAuthors(string articleAuthorString)
         {
             if (string.IsNullOrWhiteSpace(articleAuthorString))
@@ -195,6 +240,11 @@ namespace ACOM.DocumentationSample.Controllers
             return articleAuthorString.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(a => a.Trim()).ToArray();
         }
 
+        /// <summary>
+        /// Deserialize the GithubContributors list.
+        /// </summary>
+        /// <param name="githubContributorsString">JSON string containing the array of Github Authors.</param>
+        /// <returns>A collection with the parsed GithubAuthors.</returns>
         internal IEnumerable<GithubAuthor> ParseGitHubContributors(string githubContributorsString)
         {
             if (!string.IsNullOrEmpty(githubContributorsString))
