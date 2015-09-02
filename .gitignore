@@ -3,3 +3,6 @@ obj
 packages/
 .vs/ 
 *.suo
+*.Cache
+*.user
+/dps-web-experience-sample/*.user
