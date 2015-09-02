@@ -15,11 +15,11 @@
     </span>
 
     <div class="contributors">
-        <div class="contribute">
-            <span>Contributors</span>
-        </div>
         @if (Model.Contributors.Count() > 1)
         {
+            <div class="contribute">
+                <span>Contributors</span>
+            </div>
             <ul>
                 @for (int i = 1; i < Model.Contributors.Count(); i++)
                 {
