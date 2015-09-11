@@ -1,5 +1,11 @@
 ﻿@model ACOM.DocumentationSample.Models.DocumentationArticlesListModel
 
+@{
+    ViewBag.Page = "home";
+    ViewBag.Title = "Visual Studio - Tools for Apache Cordova";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 <h1>
   @Model.PageTitle - @Model.Count Articles
 </h1>
