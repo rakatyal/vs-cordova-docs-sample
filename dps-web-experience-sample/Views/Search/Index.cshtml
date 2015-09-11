@@ -1,0 +1,61 @@
+﻿@model ACOM.DocumentationSample.Models.DocumentationArticlesListModel
+@{
+    ViewBag.Page = "search";
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#search-form').submit(function() {
+                var qt = $('#q').val().trim();
+                if (!qt || qt == '') {
+                    $(this).addClass('has-error');
+                    return false;
+                }
+            });
+        });
+    </script>
+}
+<div class="container body-content search">
+    <h2>Search</h2>
+    <div class="row">
+        <div class="col-md-10">
+            <form id="search-form" class="search-form">
+                <div class="input-group">
+                    <input type="text" name="q" id="q" class="search-box form-control" value="@Model.PredefinedQueryTerms" placeholder="Search" />
+                    <span class="input-group-btn">
+                        <button class="btn" type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </form>
+            @if (Model.PredefinedQueryTerms == null)
+            {
+                <p>Enter a search term</p>
+            }
+            else if (Model.Results == null)
+            {
+                <p>No results</p>
+            }
+            else
+            {
+                <p class="count"><b>@Model.Results.Count()</b> @(Model.Results.Count() > 1 ? "results" : "result") found</p>
+                <ul class="search-results">
+                    @foreach (SearchResult r in Model.Results)
+                    {
+                        <li class="result">
+                            <h3><a href="@r.Link">@Html.Raw(r.HtmlTitle)</a></h3>
+                            <p class="snippet">@Html.Raw(r.HtmlSnippet)</p>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+
+</div>
+@section MoreMetadata {
+    <meta name="description" content="" />
+}
