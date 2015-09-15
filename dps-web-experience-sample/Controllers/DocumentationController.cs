@@ -50,23 +50,24 @@ namespace ACOM.DocumentationSample.Controllers
         [Route("{culture=en-us}")]
         public ActionResult Index(string culture)
         {
-            var version = GetPublishedVersion(_blobContainer, culture) ?? GetPublishedVersion(_blobContainer, CultureHelper.GetDefaultCulture() ?? string.Empty);
-            var blobPrefixFormat = _config.ArticleListFormat.Replace("{2}.html", "");
-            var prefix = string.Format(CultureInfo.InvariantCulture, blobPrefixFormat, version.Language, version.PublishedVersion);
+            //var version = GetPublishedVersion(_blobContainer, culture) ?? GetPublishedVersion(_blobContainer, CultureHelper.GetDefaultCulture() ?? string.Empty);
+            //var blobPrefixFormat = _config.ArticleListFormat.Replace("{2}.html", "");
+            //var prefix = string.Format(CultureInfo.InvariantCulture, blobPrefixFormat, version.Language, version.PublishedVersion);
 
-            var model = new DocumentationArticlesListModel();
-            model.PageTitle = _partnerName + " Documentation Articles";
-            foreach (CloudBlockBlob articleBlob in _blobContainer.ListBlobs(prefix, false).OfType<CloudBlockBlob>())
-            {
-                // Populate the blob's attributes.
-                articleBlob.FetchAttributes();
+            //var model = new DocumentationArticlesListModel();
+            //model.PageTitle = _partnerName + " Documentation Articles";
+            //foreach (CloudBlockBlob articleBlob in _blobContainer.ListBlobs(prefix, false).OfType<CloudBlockBlob>())
+            //{
+            //    // Populate the blob's attributes.
+            //    articleBlob.FetchAttributes();
 
-                var articleMetadata = GetArticleMetada(articleBlob);
-                model.Articles.Add(articleMetadata);
-            }
-            model.Count = model.Articles.Count;
+            //    var articleMetadata = GetArticleMetada(articleBlob);
+            //    model.Articles.Add(articleMetadata);
+            //}
+            //model.Count = model.Articles.Count;
 
-            return View(model);
+            //return View(model);
+            return RedirectToAction("Article", new { id = "get-started-vs-tools-apache-cordova" });
         }
 
         /// <summary>
