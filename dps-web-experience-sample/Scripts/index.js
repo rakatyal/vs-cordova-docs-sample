@@ -1,21 +1,39 @@
 ﻿var docs_toc = {
     "install": { parent: "" },
 
-    "tutorial-cordova-5-readme": { parent: "develop" }, "cordova-5-security": { parent: "develop" }, "tutorial-gulp-readme": { parent: "develop" },
-    "gulp-ci": { parent: "develop" }, "gulp-task-runner-explorer": { parent: "develop" }, "tutorial-typescript": { parent: "develop" }, "gulp-typescript": { parent: "develop" },
-    "tutorial-using-bower": { parent: "develop" }, "tutorial-nuget": { parent: "develop" },
+    "get-started-vs-tools-apache-cordova": { parent: "get_started" }, "install-vs-tools-apache-cordova": { parent: "get_started" },
+    "configure-vs-tools-apache-cordova": { parent: "get_started" }, "create-first-app-using-vs-tools-apache-cordova": { parent: "get_started" },
+    "migrate-to-vs2015": { parent: "get_started" },
 
-    "tutorial-team-build-readme": { parent: "debug_and_test" }, "tfs2015": { parent: "debug_and_test" }, "tfs2013": { parent: "debug_and_test" },
-    "jenkins": { parent: "debug_and_test" }, "general": { parent: "debug_and_test" }, "karma": { parent: "debug_and_test" }, "chutzpah": { parent: "debug_and_test" },
+    "tutorial-cordova-5-readme": { parent: "develop" }, "cordova-5-security": { parent: "develop" }, "configure-app": { parent: "develop" },
+    "manage-plugins": { parent: "develop" }, "createplugintutorial": { parent: "develop" }, "create-plugin-windows-phone": { parent: "develop" },
+    "add-connected-services": { parent: "develop" }, "access-native-cordova-project": { parent: "develop" }, "tutorial-gulp-readme": { parent: "develop" },
+    "gulp-ci": { parent: "develop" }, "gulp-task-runner-explorer": { parent: "develop" }, "tutorial-typescript": { parent: "develop" },
+    "gulp-typescript": { parent: "develop" }, "tutorial-using-bower": { parent: "develop" }, "tutorial-nuget": { parent: "develop" }, "interoperability": { parent: "develop" },
 
-    "tutorial-package-publish-readme": { parent: "package_and_publish" },
+
+    "deploy-and-run-app": { parent: "debug_and_test" }, "run-app-ripple-simulator": { parent: "debug_and_test" }, "run-app-apache": { parent: "debug_and_test" },
+    "run-app-ios": { parent: "debug_and_test" }, "run-app-windows": { parent: "debug_and_test" }, "run-app-windows-phone": { parent: "debug_and_test" },
+    "run-android-emulator-on-osx-using-parallels": { parent: "debug_and_test" }, "build_ios_cloud": { parent: "debug_and_test" }, "build_ios_parallels": { parent: "debug_and_test" },
+    "debug-using-visual-studio": { parent: "debug_and_test" }, "debug-using-vs-diagnostic-tools": { parent: "debug_and_test" }, "alm-cordova": { parent: "debug_and_test" },
+    "tutorial-team-build-readme": { parent: "debug_and_test" }, "general": { parent: "debug_and_test" }, "tfs2015": { parent: "debug_and_test" },
+    "tfs2013": { parent: "debug_and_test" }, "jenkins": { parent: "debug_and_test" }, "karma": { parent: "debug_and_test" },
+    "chutzpah": { parent: "debug_and_test" },
+
+    "package-app-built-with-visual-studio": { parent: "package_and_publish" }, "tutorial-package-publish-readme": { parent: "package_and_publish" },
+    "tutorial-package-publish-readme": { parent: "package_and_publish" }, "publish-app-built-with-visual-studio": { parent: "package_and_publish" },
+
+    "tutorial-ionic": { parent: "tutorials_and_samples" }, "O365_Files": { parent: "tutorials_and_samples" }, "O365_Ionic": { parent: "tutorials_and_samples" },
+    "convert_cordova_phonegap": { parent: "tutorials_and_samples" },
 
     "tips-and-workarounds-general-readme": { parent: "tips_and_workarounds" }, "tips-and-workarounds-android-readme": { parent: "tips_and_workarounds" },
     "tips-and-workarounds-ios-readme": { parent: "tips_and_workarounds" }, "tips-and-workarounds-performance-readme": { parent: "tips_and_workarounds" },
+    "tips-and-workarounds-ios-ios-plugin-symlink-fix-readme": { parent: "tips_and_workarounds" }, "tips-and-workarounds-ios-osx-set-execute-readme": { parent: "tips_and_workarounds" },
 
     "known-issues-general": { parent: "known_issues" }, "known-issues-debugger": { parent: "known_issues" }, "known-issues-ripple-cordova": { parent: "known_issues" },
     "known-issues-cordova5": { parent: "known_issues" }, "known-issues-android": { parent: "known_issues" }, "known-issues-ios": { parent: "known_issues" },
-    "known-issues-windows": { parent: "known_issues" }, "known-issues-vs2015": { parent: "known_issues" }, "known-issues-vs2013": { parent: "known_issues" },
+    "known-issues-windows": { parent: "known_issues" }, "known-issues-vs2015": { parent: "known_issues" },
+    "known-issues-vs2013": { parent: "known_issues" }, "known-issues-npm": { parent: "known_issues" }, "known-issues-plugin-install": { parent: "known_issues" },
 
 };
 
