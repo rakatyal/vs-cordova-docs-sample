@@ -23,7 +23,8 @@
     "package-app-built-with-visual-studio": { parent: "package_and_publish" }, "tutorial-package-publish-readme": { parent: "package_and_publish" },
     "tutorial-package-publish-readme": { parent: "package_and_publish" }, "publish-app-built-with-visual-studio": { parent: "package_and_publish" },
 
-    "tutorial-ionic": { parent: "tutorials_and_samples" }, "O365_Files": { parent: "tutorials_and_samples" }, "O365_Ionic": { parent: "tutorials_and_samples" },
+    "create-to-do-list-app": { parent: "tutorials_and_samples" }, "tutorial-ionic": { parent: "tutorials_and_samples" },
+    "O365_Files": { parent: "tutorials_and_samples" }, "O365_Ionic": { parent: "tutorials_and_samples" },
     "convert_cordova_phonegap": { parent: "tutorials_and_samples" },
 
     "tips-and-workarounds-general-readme": { parent: "tips_and_workarounds" }, "tips-and-workarounds-android-readme": { parent: "tips_and_workarounds" },
