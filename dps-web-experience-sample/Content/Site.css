@@ -198,6 +198,11 @@ footer {
   display: block;
   margin: 0 auto; }
 
+.affix {
+    position: fixed !important;
+    top: 120px;
+}
+
 /*----- Nav -----*/
 .preview-flag {
   position: absolute;
