@@ -12,10 +12,12 @@
     @this.RenderSection("cp_head", false)
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
-
+    <script type="text/javascript" src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse @(ViewBag.Page == "home" ? "home" : "")">
+    <!--<div class="navbar navbar-inverse @(ViewBag.Page == "home" ? "home" : "")">
         <div class="container">
             <div class="nav navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -55,6 +57,9 @@
                 </ul>
             </div>
         </div>
+    </div>-->
+    <div class="navbar">
+        @Html.Partial("~/Views/Shared/_Header.cshtml")  
     </div>
     <div class="container body-content docs">
         <div class="row">
@@ -71,30 +76,8 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="left col-sm-6">
-                    <a href="https://twitter.com/vscordovatools" class="twitter-follow-button" data-show-count="false">Follow @@vscordovatools</a>
-                    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-                </div>
-                <div class="right col-sm-6">
-                    <ul class="links">
-                        <li><a href="http://www.microsoft.com/privacystatement/en-us/core/default.aspx" target="_blank">Privacy</a></li>
-                        <li><a href="http://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx" target="_blank">Terms of Use</a></li>
-                        <li><a href="~/License/Index">License</a></li>
-                    </ul>
-                    <div class="copyright">
-                        <a class="logo" href="http://www.microsoft.com"><img src="~/Content/images/microsoft-logo.png" height="20" /></a>
-                        <span>&copy; @DateTime.Now.Year Microsoft</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script type="text/javascript" src="~/Scripts/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/modernizr-2.8.3.js"></script>
+    @Html.Partial("~/Views/Shared/_Footer.cshtml")
+
     @Scripts.Render("~/Scripts/toc.js")
     @Scripts.Render("~/Scripts/index.js")
     @RenderSection("scripts", required: false)
