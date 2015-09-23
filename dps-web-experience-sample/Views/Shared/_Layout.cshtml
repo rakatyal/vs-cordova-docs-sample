@@ -69,13 +69,13 @@
             <div class="col-sm-9 col-md-7 body">
                 @RenderBody()
                 <hr />
-
+                <a name="comments"><div id="disqus_thread" class="disqus"></div></a>
             </div>
             <div class="col-md-2">
                 @Html.Partial("~/Views/Shared/_RightNav.cshtml")
             </div>
         </div>
-        <div id="disqus_thread" class="disqus"></div>
+        
     </div>
     @Html.Partial("~/Views/Shared/_Footer.cshtml")
 
