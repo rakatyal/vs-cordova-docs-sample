@@ -203,6 +203,10 @@ footer {
     top: 120px;
 }
 
+.disqus {
+    margin-top: 10px;
+}
+
 /*----- Nav -----*/
 .preview-flag {
   position: absolute;
