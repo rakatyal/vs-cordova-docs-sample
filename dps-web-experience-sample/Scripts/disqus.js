@@ -1,5 +1,5 @@
 ﻿/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-var disqus_shortname = 'vstaco'; // Required - Replace '<example>' with your forum shortname
+var disqus_shortname = 'vscordova'; // Required - Replace '<example>' with your forum shortname
 
 /* * * DON'T EDIT BELOW THIS LINE * * */
 (function() {
