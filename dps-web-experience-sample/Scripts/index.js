@@ -17,8 +17,10 @@
     "debug-using-visual-studio": { parent: "debug_and_test" }, "debug-using-vs-diagnostic-tools": { parent: "debug_and_test" },
 
     "alm-cordova": { parent: "build_and_test" }, "tutorial-team-build-readme": { parent: "build_and_test" }, "general": { parent: "build_and_test" },
-    "tfs2015": { parent: "build_and_test" }, "tfs2013": { parent: "build_and_test" }, "jenkins": { parent: "build_and_test" }, "karma": { parent: "build_and_test" }, 
+    "tfs2015": { parent: "build_and_test" }, "tfs2013": { parent: "build_and_test" }, "jenkins": { parent: "build_and_test" }, "karma": { parent: "build_and_test" },
     "chutzpah": { parent: "build_and_test" },
+
+    "cost-cordova": { parent: "optimize_performance" }, "better-web-performance": { parent: "optimize_performance" }, "measure-performance": { parent: "optimize_performance" },
 
     "package-app-built-with-visual-studio": { parent: "package_and_publish" }, "tutorial-package-publish-readme": { parent: "package_and_publish" },
     "get-your-app-approved": { parent: "package_and_publish" }, "publish-app-built-with-visual-studio": { parent: "package_and_publish" },
