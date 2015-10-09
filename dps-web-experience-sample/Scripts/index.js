@@ -38,6 +38,8 @@
     "known-issues-windows": { parent: "known_issues" }, "known-issues-vs2015": { parent: "known_issues" },
     "known-issues-vs2013": { parent: "known_issues" }, "known-issues-npm": { parent: "known_issues" }, "known-issues-plugin-install": { parent: "known_issues" },
 
+    "release-update-3": { parent: "release_notes" },
+
 };
 
 $(document).ready(function () {
