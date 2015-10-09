@@ -1,8 +1,7 @@
 ﻿var docs_toc = {
     "install": { parent: "" },
 
-    "get-started-vs-tools-apache-cordova": { parent: "get_started" }, "install-vs-tools-apache-cordova": { parent: "get_started" },
-    "configure-vs-tools-apache-cordova": { parent: "get_started" }, "create-first-app-using-vs-tools-apache-cordova": { parent: "get_started" },
+    "get-started-first-mobile-app": { parent: "get_started" }, "install-vs-tools-apache-cordova": { parent: "get_started" },
     "migrate-to-vs2015": { parent: "get_started" },
 
     "tutorial-cordova-5-readme": { parent: "develop" }, "cordova-5-security": { parent: "develop" }, "configure-app": { parent: "develop" },
@@ -17,18 +16,18 @@
     "run-android-emulator-on-osx-using-parallels": { parent: "debug_and_test" }, "build_ios_cloud": { parent: "debug_and_test" }, "build_ios_parallels": { parent: "debug_and_test" },
     "debug-using-visual-studio": { parent: "debug_and_test" }, "debug-using-vs-diagnostic-tools": { parent: "debug_and_test" }, "alm-cordova": { parent: "debug_and_test" },
     "tutorial-team-build-readme": { parent: "debug_and_test" }, "general": { parent: "debug_and_test" }, "tfs2015": { parent: "debug_and_test" },
-    "tfs2013": { parent: "debug_and_test" }, "jenkins": { parent: "debug_and_test" }, "karma": { parent: "debug_and_test" },
-    "chutzpah": { parent: "debug_and_test" },
+    "tfs2013": { parent: "debug_and_test" }, "jenkins": { parent: "debug_and_test" }, "karma": { parent: "debug_and_test" }, "chutzpah": { parent: "debug_and_test" },
 
     "package-app-built-with-visual-studio": { parent: "package_and_publish" }, "tutorial-package-publish-readme": { parent: "package_and_publish" },
     "get-your-app-approved": { parent: "package_and_publish" }, "publish-app-built-with-visual-studio": { parent: "package_and_publish" },
 
-    "create-to-do-list-app": { parent: "tutorials_and_samples" }, "tutorial-ionic": { parent: "tutorials_and_samples" }, "o365_files": { parent: "tutorials_and_samples" }, "o365_ionic": { parent: "tutorials_and_samples" },
+    "create-to-do-list-app": { parent: "tutorials_and_samples" }, "tutorial-ionic": { parent: "tutorials_and_samples" }, "o365-files": { parent: "tutorials_and_samples" }, "o365-ionic": { parent: "tutorials_and_samples" },
     "convert_cordova_phonegap": { parent: "tutorials_and_samples" },
 
-    "tips-and-workarounds-general-readme": { parent: "tips_and_workarounds" }, "tips-and-workarounds-android-readme": { parent: "tips_and_workarounds" },
-    "tips-and-workarounds-ios-readme": { parent: "tips_and_workarounds" }, "tips-and-workarounds-performance-readme": { parent: "tips_and_workarounds" },
-    "tips-and-workarounds-ios-ios-plugin-symlink-fix-readme": { parent: "tips_and_workarounds" }, "tips-and-workarounds-ios-osx-set-execute-readme": { parent: "tips_and_workarounds" },
+    "tips-and-workarounds-general-readme": { parent: "tips_and_workarounds" }, "configure-vs-tools-apache-cordova": { parent: "get_started" },
+    "tips-and-workarounds-android-readme": { parent: "tips_and_workarounds" }, "tips-and-workarounds-ios-readme": { parent: "tips_and_workarounds" },
+    "tips-and-workarounds-performance-readme": { parent: "tips_and_workarounds" }, "tips-and-workarounds-ios-ios-plugin-symlink-fix-readme": { parent: "tips_and_workarounds" },
+    "tips-and-workarounds-ios-osx-set-execute-readme": { parent: "tips_and_workarounds" },
 
     "known-issues-general": { parent: "known_issues" }, "known-issues-debugger": { parent: "known_issues" }, "known-issues-ripple-cordova": { parent: "known_issues" },
     "known-issues-cordova5": { parent: "known_issues" }, "known-issues-android": { parent: "known_issues" }, "known-issues-ios": { parent: "known_issues" },
